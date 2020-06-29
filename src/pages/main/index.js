@@ -5,7 +5,7 @@ import "./styles.css"
 export default class main extends Component {
 
     state = {        //O conceito de Estado é sempre um objeto
-        notes: [],
+        note: [],
     }
 
     componentDidMount() {// métodos que pertencem ao react é liberado o uso de funções padrão e não somene arrow funcition
@@ -15,18 +15,18 @@ export default class main extends Component {
     loadNotes = async () => { // Arrow functions não sobreescreve o valor do this
         const response = await api.get('/');
 
-        this.setState({ notes: response.data.docs });
+        this.setState({ note: response.data.docs });
      };
     
     render() {
-        const { notes } = this.state;
+        const { note } = this.state;
         return (
             <div className="note-list">   
-            {notes.map(notes =>( //Sempre que se usa o método map dever ser inserido o atributo key com um valor único.
-                <article key={notes._id}>
-                    <strong>{notes.title}</strong>
-                    <p>{notes.description}</p>
-                    <p>{notes.createdAt}</p>
+            {note.map(note =>( //Sempre que se usa o método map dever ser inserido o atributo key com um valor único.
+                <article key={note._id}>
+                    <strong>{note.title}</strong>
+                    <p>{note.description}</p>
+                    <p>{note.createdAt}</p>
                 </article> // 
             ))}
             </div>
