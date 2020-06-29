@@ -13,7 +13,7 @@ export default class main extends Component {
     }
     
     loadNotes = async () => { // Arrow functions não sobreescreve o valor do this
-        const response = await api.get('/note');
+        const response = await api.get('/');
 
         this.setState({ notes: response.data.docs });
      };
