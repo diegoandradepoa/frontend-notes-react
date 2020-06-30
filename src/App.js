@@ -8,8 +8,10 @@ import Main from './pages/main';
 
 function App() {
  return ( 
-     <Header />,
+    <div>
+     <Header />
      <Main />
+    </div>
     );
 }
 
