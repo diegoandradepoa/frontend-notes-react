@@ -1,6 +1,6 @@
 import React from 'react';
 import "./styles.css";
 
-const Header = () => <header id="main-header">NOTAS</header>
+const Header = () => <div id="main-header">NOTAS</div>
 
 export default Header;
